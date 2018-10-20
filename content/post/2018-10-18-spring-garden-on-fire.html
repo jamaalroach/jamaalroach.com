@@ -1,0 +1,54 @@
+---
+title: Spring Garden On Fire
+author: ''
+date: '2018-10-18'
+image: "img/portfolio/a4-paper.jpg"
+slug: spring-garden-on-fire
+categories: []
+tags: []
+---
+
+
+
+<p><a href="https://www.visitbarbados.org/">Barbados</a> is hot. It was always hot, its a tropical paradise in the Caribbean its supposed to be hot but for Bajans, in recent times it feels hotter than ever before. The heat is oppressive , making a five minute walk at midday seem like a journey through hell and forget about driving with your window down to enjoy the breeze.</p>
+<p>This is no surprise, everyone knows the earth is getting warmer. Since 1901 and according to this report the warming is accelerating So the question isn’t if it is getting hotter in Barbados, that is a definite yes. What I really <del>wanted</del> <strong>needed</strong> to know as i was sweating profusely watching Under-9 football one Saturday morning , was what this increase looked like. And so,the idea for this post was born.</p>
+<p>All the data analysis and visualistion was done in R and if you are interested in seeing the code you can find it at my github here.</p>
+<div id="the-data" class="section level1">
+<h1>The Data</h1>
+<p>I downloaded Barbados’ monthly average temperature data from 1901 -2015 from the <a href="http://sdwebx.worldbank.org/climateportal/index.cfm?page=country_historical_climate&amp;ThisRegion=Latin%20America&amp;ThisCcode=BRB">The World Bank Climate Knowledge Portal</a>. Using this I created aannual and decade variables which were used to create the charts.The source data file is avialable <a href="https://gist.githubusercontent.com/jamaalroach/bc8e31c8756813ad485ec100d921dd25/raw/19d08c5a991afa9ad338ba0183fb6720faa9b5be/temp.csv">here</a></p>
+</div>
+<div id="the-annual-trend" class="section level1">
+<h1>The Annual Trend</h1>
+<p>So what’s the best way to display 114 years of time series data? A line chart of course.</p>
+<p><strong>The chart is interactive, hover over a point for more detail</strong></p>
+<p><img src="/post/2018-10-18-spring-garden-on-fire_files/figure-html/unnamed-chunk-3-1.png" width="672" /> Simple and effective.</p>
+<p>There is a lot of fluctuation year over year but the upward trajectory is clear and it’s highlighted it with a blue trend line.You can see the nnual temperature rissing gradually over the years until about 1970 where the increase accelerates.Pre 1970t the temperature increased by … per decade whiel afeter 1970 teh increase was per decade.</p>
+</div>
+<div id="decade-temperature-ranges" class="section level1">
+<h1>Decade Temperature Ranges</h1>
+<p>Let’s take a look at the decade view. In this chart I compared the range between the <strong><span style="color:steelblue">minimum</span></strong> and <strong><span style="color:red">maximum</span></strong> annual average temperatures observed by decade.</p>
+<p><img src="/post/2018-10-18-spring-garden-on-fire_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>I think this is really useful in highlighting how much hotter the last three decades have been in comparison to the past.Although the 2010’s havent quite reached the high of the 2000’s (yet), its low is above the high of every decade preceeding the 80s and is only 0.1 degrees lower than the highs of the 80’s and 90’s.</p>
+<p>Another point that jumps out is the really small range recorded in the 1900’s.What could be the reason for that?</p>
+</div>
+<div id="temperature-anomalies" class="section level1">
+<h1>Temperature Anomalies</h1>
+<p>The defines temperature anomlaies as:</p>
+<blockquote>
+<p>The difference between the long term average temperature (baseline) and the temperature that actually occurs. A positive anomaly means that the temperature was warmer than normal; a negative anomaly indicates that the temperature was cooler than normal.</p>
+</blockquote>
+<p>For my baseline I used the average temperature for the 20th Century <code>rltavg$avg</code> and plotted the anomalies below.</p>
+<p><strong>The chart is interactive, hover over a point for more detail</strong></p>
+<p><img src="/post/2018-10-18-spring-garden-on-fire_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>As expected there were both cooler and hotter years during the period but whta is really of note is that the years since 1987 have all been ablve the long term average.</p>
+</div>
+<div id="warming-stripes" class="section level1">
+<h1>Warming Stripes</h1>
+<p>The header image for this post is an application of the very popular <a href="http://www.climate-lab-book.ac.uk/2018/warming-stripes/">Warming Stripes</a> visualisation by Ed Hawkins. Each stripe represents a year with the colours being representiaive of the annual avearge temperature.</p>
+<p><img src="/post/2018-10-18-spring-garden-on-fire_files/figure-html/unnamed-chunk-7-1.png" width="672" /> Once again it shows that tempearture in Barbados continues to rise.</p>
+</div>
+<div id="conclusion" class="section level1">
+<h1>Conclusion</h1>
+<p>This was a case of quanitfying / visualising the obvious.</p>
+<p>```</p>
+</div>
